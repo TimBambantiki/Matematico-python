@@ -1,0 +1,10 @@
+INSTALL
+=======
+
+1. You must have installed Python (with Tkinter and Cython) and gcc
+2. Compile matematico.c by setup.py: python setup.py build_ext --inplace
+3. Run matematico.py: python matematico.py
+
+There is a way in Windows, too. This I maybe will write sometimes in future.
+It is possible by mingw and Python. No problem :) (But it is Windows, guy doesn't
+know...)
