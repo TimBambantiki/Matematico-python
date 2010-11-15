@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Matematico</title>
+	<meta name="keywords" content="matematico, hra, hry, logika, matematika, přemýšlení, zábava" />
+	<meta name="description" content="Matematico je matematicko-logická hra s nutností přemýšlet, přesto nesmírně napínavá a ve více lidech i strhující." />
+	<meta content="Juda Kaleta - juda.kaleta(at)gmail.com" name="author" />
+	<meta content="index, follow" name="robots" />
+	<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="content">
+		<div id="logo">
+			<h1>Matematico</h1>
+		</div>
+
+		<div id="right">
+			<div id="number"></div>
+			<div id="info">
+				<p>Mate&shy;ma&shy;tico je logi&shy;cká hra, kde máte za&nbsp;úkol dosa&shy;zo&shy;vat tahaná čísla do&nbsp;tabul&shy;ky tak, aby vznikaly potřebné kom&shy;binace, jak v&nbsp;řádcích, tak i&nbsp;sloupcích a&nbsp;úhlo&shy;pří&shy;čkách. Čísla jsou v rozmezí 1 až 13 a&nbsp;v&nbsp;kombi&shy;na&shy;cích mohou být i&nbsp;pře&shy;há&shy;zeny. Možné kom&shy;bi&shy;nace jsou tyto:</p>
+
+				<ol>
+					<li>Poker - čtveřice stejných čísel (160)                                    </li>
+					<li>Kombinace čísel: 1, 1, 13, 13, 13 (100)                               </li>
+					<li>Full Hause - trojice a dvojice (80)                                   </li>
+					<li>Postupka (50)                                                         </li>
+					<li>Trojice (40)                                                          </li>
+					<li>Dvě dvojice - dvě dvojice z různých čísel a jedno číslo jiné (30)     </li>
+					<li>Dvojice (10)                                                          </li>
+				</ol>
+
+				<p>Pokud umístíte kombinaci do úhlopříčky, dostanete navíc 10 bodů.</p>
+			</div>
+		</div>
+
+		<div id="game">
+			<table>
+				<tr>
+					<td class="field" id="1-1"></td>
+					<td class="field" id="2-1"></td>
+					<td class="field" id="3-1"></td>
+					<td class="field" id="4-1"></td>
+					<td class="field" id="5-1"></td>
+				</tr>
+				<tr>
+					<td class="field" id="1-2"></td>
+					<td class="field" id="2-2"></td>
+					<td class="field" id="3-2"></td>
+					<td class="field" id="4-2"></td>
+					<td class="field" id="5-2"></td>
+				</tr>
+				<tr>
+					<td class="field" id="1-3"></td>
+					<td class="field" id="2-3"></td>
+					<td class="field" id="3-3"></td>
+					<td class="field" id="4-3"></td>
+					<td class="field" id="5-3"></td>
+				</tr>
+				<tr>
+					<td class="field" id="1-4"></td>
+					<td class="field" id="2-4"></td>
+					<td class="field" id="3-4"></td>
+					<td class="field" id="4-4"></td>
+					<td class="field" id="5-4"></td>
+				</tr>
+				<tr>
+					<td class="field" id="1-5"></td>
+					<td class="field" id="2-5"></td>
+					<td class="field" id="3-5"></td>
+					<td class="field" id="4-5"></td>
+					<td class="field" id="5-5"></td>
+				</tr>
+			</table>
+		</div>
+		<hr>
+		<div id="footer">
+		2010 Juda Kaleta | <i>under GNU GPL v3</i>
+		</div>
+	</div>
+	<script src="matematico.js"></script>
+	<script>
+	var game = Matematico.init();
+	</script>
+</body>
+</html>
+
