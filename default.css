@@ -3,6 +3,10 @@ body {
 	font-family: Tahoma, Verdana, sans-serif;
 }
 
+a {
+	color: #315673;
+}
+
 hr {
 	visibility: hidden;
 	clear: both;
@@ -101,8 +105,39 @@ h1 {
     text-shadow: 1px 1px 2px #444;
 }
 
+#newgame {
+	display: none;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-align: center;
+	height: 30px;
+
+	margin-top: 20px;
+	background: #C8D9D9;
+	padding-top: 10px;
+
+	-webkit-border-top-left-radius: 12px;
+	-webkit-border-bottom-left-radius: 12px;
+	-moz-border-radius-topleft: 12px;
+	-moz-border-radius-bottomleft: 12px;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+
+	-moz-box-shadow: 1px 1px 4px #999;
+	-webkit-box-shadow: 1px 1px 4px #999;
+    box-shadow: 1px 1px 4px #999;
+}
+
+#newgame a {
+	text-decoration: none;
+}
+
 .little {
 	font-size: 0.25em;
+}
+
+.verylittle {
+	font-size: 0.1em;
 }
 
 #info {
@@ -140,3 +175,4 @@ h1 {
 	font-size: 0.7em;
 	text-align: center;
 }
+

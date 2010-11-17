@@ -183,6 +183,8 @@ var Matematico = {
 			if (Matematico.model.finished==true) {
 				document.getElementById('number').innerHTML = "<span class='little'>Tvoje skóre:</span><br>"+document.getElementById('number').innerHTML;
 				document.getElementById('number').style.height = "250px";
+				document.getElementById('newgame').style.display = "block";
+				document.getElementById('info').style.display = "none";
 			}
 		}
 	},
