@@ -10,25 +10,49 @@
 	<link href="default.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+	<div id="fb-root"></div>
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '132550773473913', // App ID
+      channelURL : '//channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      oauth      : true, // enable OAuth 2.0
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     d.getElementsByTagName('head')[0].appendChild(js);
+   }(document));
+   </script>
+
 	<div id="content">
 		<div id="logo">
-			<h1>Matematico</h1>
+			<h1><fb:intl desc="Name of the game">Matematico</fb:intl></h1>
 		</div>
 
 		<div id="right">
 			<div id="number"></div>
-			<div id="newgame"><a href="javascript: location.reload(true);">Nová hra</a></div>
+			<div id="newgame"><a href="javascript: location.reload(true);"><fb:intl>Nová hra</fb:intl></a></div>
 			<div id="info">
-				<p>Mate&shy;ma&shy;tico je logi&shy;cká hra, kde máte za&nbsp;úkol dosa&shy;zo&shy;vat tahaná čísla do&nbsp;tabul&shy;ky tak, aby vznikaly potřebné kom&shy;binace, jak v&nbsp;řádcích, tak i&nbsp;sloupcích a&nbsp;úhlo&shy;pří&shy;čkách. Čísla jsou v rozmezí 1 až 13 a&nbsp;v&nbsp;kombi&shy;na&shy;cích mohou být i&nbsp;pře&shy;há&shy;zeny. Možné kom&shy;bi&shy;nace jsou tyto:</p>
+				<p><fb:intl desc="Description of the game">Mate&shy;ma&shy;tico je logi&shy;cká hra, kde máte za&nbsp;úkol dosa&shy;zo&shy;vat tahaná čísla do&nbsp;tabul&shy;ky tak, aby vznikaly potřebné kom&shy;binace, jak v&nbsp;řádcích, tak i&nbsp;sloupcích a&nbsp;úhlo&shy;pří&shy;čkách. Čísla jsou v rozmezí 1 až 13 a&nbsp;v&nbsp;kombi&shy;na&shy;cích mohou být i&nbsp;pře&shy;há&shy;zeny. Možné kom&shy;bi&shy;nace jsou tyto:</fb:intl></p>
 
 				<ol>
-					<li>Poker - čtveřice stejných čísel (160)                                    </li>
-					<li>Kombinace čísel: 1, 1, 13, 13, 13 (100)                               </li>
-					<li>Full Hause - trojice a dvojice (80)                                   </li>
-					<li>Postupka (50)                                                         </li>
-					<li>Trojice (40)                                                          </li>
-					<li>Dvě dvojice - dvě dvojice z různých čísel a jedno číslo jiné (30)     </li>
-					<li>Dvojice (10)                                                          </li>
+					<li><fb:intl>Poker - čtveřice stejných čísel (160)          </fb:intl>                           </li>
+					<li><fb:intl>Kombinace čísel: 1, 1, 13, 13, 13 (100)        </fb:intl>                        </li>
+					<li><fb:intl>Full Hause - trojice a dvojice (80) </fb:intl>                                   </li>
+					<li><fb:intl>Postupka (50)            </fb:intl>                                              </li>
+					<li><fb:intl>Trojice (40)  </fb:intl>                                                         </li>
+					<li><fb:intl>Dvě dvojice - dvě dvojice z různých čísel a jedno číslo jiné (30) </fb:intl>     </li>
+					<li><fb:intl>Dvojice (10) </fb:intl>                                                         </li>
 				</ol>
 
 				<p>Pokud umístíte kombinaci do úhlopříčky, dostanete navíc 10 bodů.</p>
@@ -93,6 +117,8 @@
 	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
+
+
 	</script>
 </body>
 </html>
