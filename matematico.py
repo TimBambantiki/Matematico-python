@@ -30,15 +30,32 @@ while i < 5:
         row, col = equivalence[placement]
         gamelist[row][col] = number
         positionlist.remove(placement)
-# points calculation
+# points calculation 
 print(gamelist)
 points = 0
-bob = (Counter(gamelist[0]))
-if max(bob) == 1:
+pointsa = (Counter(gamelist[0]))
+if any(x == 4 for x in pointsa.values()):
     points += 4
+if any(x == 3 for x in pointsa.values()):
+    trioa = True
+else:
+    trioa = False
+if any(x == 2 for x in pointsa.values()):
+    duoa = True
+else:
+    duoa = False
+duos = [count for count in pointsa.values() if count == 2]
+if len(duos) == 2: 
+    doubleduoa = True
+else:
+    doubleduoa = False
+if trioa is True and duoa is True:
+    points += 5
+if trioa is False and duoa is True and doubleduoa is False:
+    points += 1
+if trioa is False and duoa is True and doubleduoa is True:
+    points += 3
+if trioa is True and duoa is False:
+    points += 2
+print(pointsa)
 print(points)
-
-
-    
-
-    
