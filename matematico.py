@@ -57,5 +57,9 @@ if trioa is False and duoa is True and doubleduoa is True:
     points += 3
 if trioa is True and duoa is False:
     points += 2
-print(pointsa)
+count = 0
+for i in range(1, 14):
+    triple = [i, i+1, i+2]
+    if set(triple) <= set(gamelist[0]):
+        count += 1
 print(points)
