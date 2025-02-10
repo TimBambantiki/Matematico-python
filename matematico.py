@@ -20,7 +20,7 @@ equivalencelist = [(row, col) for row in range(5) for col in range(5)]
 equivalence = {value: position for value, position in zip(positionlist, equivalencelist)}
 # placement logic
 i = 0
-while i < 5:
+while i < 25:
     i += 1
     number = random.choice(numberslist)
     print(number)
@@ -30,36 +30,68 @@ while i < 5:
         row, col = equivalence[placement]
         gamelist[row][col] = number
         positionlist.remove(placement)
-# points calculation 
+for i in range(len(gamelist[0])):
+    globals()[f'col{i+1}'] = [row[i] for row in gamelist]
+maindiagonal = [gamelist[i][i] for i in range(5)]
+antidiagonal = [gamelist[i][4 - i] for i in range(5)]
+possible = [gamelist[0], gamelist[1] ,gamelist[2] ,gamelist[3] , gamelist[4], col1, col2, col3, col4, col5, maindiagonal, antidiagonal]
 print(gamelist)
 points = 0
-pointsa = (Counter(gamelist[0]))
-if any(x == 4 for x in pointsa.values()):
-    points += 4
-if any(x == 3 for x in pointsa.values()):
-    trioa = True
-else:
-    trioa = False
-if any(x == 2 for x in pointsa.values()):
-    duoa = True
-else:
-    duoa = False
-duos = [count for count in pointsa.values() if count == 2]
-if len(duos) == 2: 
-    doubleduoa = True
-else:
-    doubleduoa = False
-if trioa is True and duoa is True:
-    points += 5
-if trioa is False and duoa is True and doubleduoa is False:
-    points += 1
-if trioa is False and duoa is True and doubleduoa is True:
-    points += 3
-if trioa is True and duoa is False:
-    points += 2
-count = 0
-for i in range(1, 14):
-    triple = [i, i+1, i+2]
-    if set(triple) <= set(gamelist[0]):
-        count += 1
+for j in possible:
+    pointsa = (Counter(j))
+    if any(x == 4 for x in pointsa.values()):
+        quada = True
+    else:
+        quada = False
+    if any(x == 3 for x in pointsa.values()):
+        trioa = True
+    else:
+        trioa = False
+    if any(x == 2 for x in pointsa.values()):
+        duoa = True
+    else:
+        duoa = False
+    duos = [count for count in pointsa.values() if count == 2]
+    if len(duos) == 2: 
+        doubleduoa = True
+    else:
+        doubleduoa = False
+    count = 0
+    for i in range(1, 14):
+        triple = [i, i+1, i+2]
+        if set(triple) <= set(j):
+            count += 1
+    if count == 1:
+        seq3 = True
+    else:
+        seq3 = False
+    if count == 2:
+        seq4 = True
+    else:
+        seq4 = False
+    if count == 2:
+        seq5 = True
+    else:
+        seq5 = False
+    if all([duoa, not trioa, not quada, not doubleduoa, not seq3, not seq4, not seq5]): 
+        points += 1 # duo
+    elif all([not duoa, trioa, not quada, not doubleduoa, not seq3, not seq4, not seq5]):  
+        points += 2 # trio
+    elif all([not duoa, not trioa, quada, not doubleduoa, not seq3, not seq4, not seq5]): 
+        points += 4 # quad
+    elif all([duoa, trioa, not quada, doubleduoa, not seq3, not seq4, not seq5]): 
+        points += 3 # double duo
+    elif all([duoa, trioa, not quada, not doubleduoa, not seq3, not seq4, not seq5]): 
+        points += 5 # duo and trio
+    elif all([not duoa, not trioa, not quada, not doubleduoa, seq3, not seq4, not seq5]): 
+        points += 1 # 3
+    elif all([not duoa, not trioa, not quada, not doubleduoa, not seq3, seq4, not seq5]): 
+        points += 3 # 4
+    elif all([not duoa, not trioa, not quada, not doubleduoa, not seq3, seq4, not seq5]): 
+        points += 6 # 5
+    elif all([duoa, not trioa, not quada, not doubleduoa, seq3, not seq4, not seq5]): 
+        points += 0 # 3 and duo
+    else:
+        points += 0
 print(points)
+
